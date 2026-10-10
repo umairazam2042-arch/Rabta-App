@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #2f5bff;
+  --color-brand-dark: #1d3fbf;
+  --color-brand-soft: #e8edff;
+  --color-ink: #101828;
+  --color-muted: #5b6472;
+  --color-line: #e4e7ec;
+  --color-canvas: #f6f7f9;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Messages section ke rang: values MessagesPage ke inline style (CSS variables) se aati hain */
+.chat-root { background-color: var(--chat-bg); color: var(--chat-text); }
+.chat-panel { background-color: var(--chat-surface); color: var(--chat-text); }
+.chat-border { border-color: var(--chat-border); }
+.chat-muted { color: var(--chat-muted); }
+.chat-in { background-color: var(--chat-in-bg); color: var(--chat-text); }
+.chat-out { background-color: var(--chat-out-bg); color: var(--chat-out-text); }
+.chat-input { background-color: var(--chat-input-bg); color: var(--chat-text); }
+.chat-input::placeholder { color: var(--chat-muted); }
+.chat-hover:hover { background-color: var(--chat-hover); }
+.chat-active { background-color: var(--chat-active); }
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============ SITE THEMES ============
+   Har theme [data-theme='...'] se lagti hai.
+   Ye Tailwind ke variables badalti hai, is liye components ko chhedna nahi padta. */
+
+/* ---- Midnight (dark) ---- */
+:root[data-theme='midnight'] {
+  color-scheme: dark;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #6d8bff;
+  --color-brand-dark: #a5b8ff;
+  --color-brand-soft: #1f2748;
+  --color-ink: #e8ebf4;
+  --color-muted: #98a2b8;
+  --color-line: #2a3145;
+  --color-canvas: #0e1220;
+
+  --color-slate-50: #1a2036;
+  --color-slate-100: #212842;
+  --color-slate-200: #2c3452;
+  --color-slate-300: #3b4566;
+  --color-slate-400: #7f8aa6;
+  --color-slate-500: #98a2b8;
+  --color-slate-600: #b3bcd0;
+  --color-slate-700: #cfd6e6;
+  --color-slate-800: #e1e6f2;
+  --color-slate-900: #f1f3fa;
+
+  /* halke rang ke dibbe aur avatars dark par bhi sahi dikhen */
+  --color-blue-100: #1d2f55;
+  --color-blue-800: #b9ccff;
+  --color-orange-100: #4a2a14;
+  --color-orange-800: #ffd0a8;
+  --color-emerald-100: #12372b;
+  --color-emerald-800: #a7f0cf;
+  --color-purple-100: #36245c;
+  --color-purple-800: #dcc8ff;
+  --color-amber-100: #4a3510;
+  --color-amber-800: #ffe0a0;
+  --color-pink-100: #4a1d36;
+  --color-red-50: #3a1a22;
+  --color-red-100: #4a1d27;
+  --color-red-700: #ffb4bf;
+}
+/* safed surface sirf background ke liye dark hoti hai, text-white waisa hi rehta hai */
+:root[data-theme='midnight'] .bg-white {
+  background-color: #171c2e;
+}
+
+/* ---- Sunset (garam, gol, khula) ---- */
+:root[data-theme='sunset'] {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --spacing: 0.26rem;
+
+  --radius-lg: 0.75rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2.25rem;
+
+  --color-brand: #ea580c;
+  --color-brand-dark: #9a3412;
+  --color-brand-soft: #ffedd5;
+  --color-ink: #3b1d0f;
+  --color-muted: #8a6a58;
+  --color-line: #f1d9c6;
+  --color-canvas: #fff7ed;
+
+  --color-slate-50: #fff3e6;
+  --color-slate-100: #fbe9d9;
+  --color-slate-200: #f5d7bd;
+  --color-slate-300: #e8c0a0;
+  --color-slate-700: #5a3a28;
+}
+
+/* ---- Forest (hara, compact, tez corners) ---- */
+:root[data-theme='forest'] {
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --spacing: 0.235rem;
+
+  --radius-md: 0.25rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
+  --radius-2xl: 0.5rem;
+  --radius-3xl: 0.75rem;
+
+  --color-brand: #15803d;
+  --color-brand-dark: #14532d;
+  --color-brand-soft: #dcfce7;
+  --color-ink: #0f2a1c;
+  --color-muted: #5b7466;
+  --color-line: #cfe3d6;
+  --color-canvas: #f1f8f3;
+
+  --color-slate-50: #eef7f1;
+  --color-slate-100: #e2f0e7;
+  --color-slate-200: #cfe3d6;
+  --color-slate-300: #b4cfbf;
+  --color-slate-700: #2f4a3a;
+}
+
+body {
+  font-family: var(--font-sans);
+}
