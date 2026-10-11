@@ -8,6 +8,7 @@ import useAuth from '../../hooks/useAuth'
 import { deletePost, likePost, unlikePost } from '../../services/post.service'
 import timeAgo from '../../utils/timeAgo'
 import getErrorMessage from '../../utils/getErrorMessage'
+import PostImage from './PostImage'
 
 const PostCard = ({ post, onDelete, showDelete = false }) => {
   const { user } = useAuth()
@@ -120,12 +121,7 @@ const PostCard = ({ post, onDelete, showDelete = false }) => {
       )}
 
       {post.image?.url && (
-        <img
-          src={post.image.url}
-          alt={`Photo posted by @${author.username}`}
-          loading="lazy"
-          className="max-h-[560px] w-full object-cover"
-        />
+         <PostImage src={post.image.url} />
       )}
 
       <footer className="flex items-center gap-1 px-3 py-2">

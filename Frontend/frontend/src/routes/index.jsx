@@ -14,6 +14,7 @@ import AdminUsersPage from '../pages/admin/AdminUsersPage'
 import AdminUserDetailPage from '../pages/admin/AdminUserDetailPage'
 import ShotsPage from '../pages/ShotsPage'
 import MessagesPage from '../pages/MessagesPage'
+import PhotoPage from '../pages/PhotoPage'
 
 const router = createBrowserRouter([
   // Sirf bina login walon ke liye: login / register
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
           { path: '/profile/:username', element: <ProfilePage /> },
           { path: '/messages/:username?', element: <MessagesPage /> },
          { path: '/shots', element: <ShotsPage /> },
+         { path: '/photo', element: <PhotoPage /> },
 
           // Sirf admin ke liye
           {
