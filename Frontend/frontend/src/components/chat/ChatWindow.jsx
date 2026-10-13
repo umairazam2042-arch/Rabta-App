@@ -1,18 +1,17 @@
-import React from 'react'
 import Alert from '../common/Alert'
 import ChatHeader from './ChatHeader'
 import ChatSelectionBar from './ChatSelectionBar'
 import MessageList from './MessageList'
 import MessageInput from './MessageInput'
 import useAuth from '../../hooks/useAuth'
-import useChatMessages from './useChatMessages'
-import useMessageSelection from './useMessageSelection'
+import UseChatMessages from './UseChatMessages'
+import UseMessageSelection from './UseMessageSelection'
 
 // Sirf composition: data hooks banata hai aur props neeche bhejta hai
 const ChatWindow = ({ username }) => {
   const { user: me } = useAuth()
-  const chat = useChatMessages({ username, me })
-  const selection = useMessageSelection({
+  const chat = UseChatMessages({ username, me })
+  const selection = UseMessageSelection({
     username,
     me,
     messages: chat.messages,

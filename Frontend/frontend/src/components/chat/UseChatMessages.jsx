@@ -11,7 +11,7 @@ import { getChatKey, encryptText, decryptMessage } from '../../utils/e2ee'
 import getErrorMessage from '../../utils/getErrorMessage'
 
 // Chat ka data: load, realtime, scroll, send / edit / delete / purane messages
-const useChatMessages = ({ username, me }) => {
+const UseChatMessages = ({ username, me }) => {
   const [other, setOther] = useState(null)
   const [messages, setMessages] = useState([])
   const [hasMore, setHasMore] = useState(false)
@@ -194,4 +194,4 @@ const useChatMessages = ({ username, me }) => {
   }
 }
 
-export default useChatMessages
+export default UseChatMessages

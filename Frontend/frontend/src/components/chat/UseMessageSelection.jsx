@@ -4,7 +4,7 @@ import { getChatKey, encryptText } from '../../utils/e2ee'
 import getErrorMessage from '../../utils/getErrorMessage'
 
 // Message selection, ⋮ menu actions (Update / Forward / Delete) ka state aur logic
-const useMessageSelection = ({ username, me, messages, onEdit, onDelete }) => {
+const UseMessageSelection = ({ username, me, messages, onEdit, onDelete }) => {
   const [selected, setSelected] = useState(() => new Set())
   const [menuOpen, setMenuOpen] = useState(false)
   // Jis message par hold kiya, menu usi ke paas khulta hai
@@ -159,4 +159,4 @@ const useMessageSelection = ({ username, me, messages, onEdit, onDelete }) => {
   }
 }
 
-export default useMessageSelection
+export default UseMessageSelection
