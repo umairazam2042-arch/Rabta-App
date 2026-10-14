@@ -14,7 +14,9 @@ connectDB().then(() => {
   const server = http.createServer(app);
   const io = initSocket(server);
   app.set("io", io);
-
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "Social Media API is running" });
+});
   // Auto-delete ka background check shuru karo
   startAutoDeleteJob();
 
