@@ -13,13 +13,17 @@ const { notFound, errorHandler } = require("./middlewares/error.middleware");
 
 const app = express();
 
-// Middlewares: har request se pehle chalte hain
-app.use(cors({ origin: process.env.CORS_ORIGIN, credentials: true }));
-app.use(express.json({ limit: "16kb" })); // JSON body parhna
-app.use(express.urlencoded({ extended: true, limit: "16kb" })); // form data parhna
-app.use(cookieParser()); // cookies parhna
-app.use(notFound);
-app.use(errorHandler);
+// Middlewares
+app.use(cors({
+  origin: process.env.CORS_ORIGIN,
+  credentials: true
+}));
+app.use(express.json({ limit: "16kb" }));
+app.use(express.urlencoded({
+  extended: true,
+  limit: "16kb"
+}));
+app.use(cookieParser());
 
 // Routes
 app.use("/api/auth/users", userRoutes);
@@ -29,7 +33,8 @@ app.use("/api/auth/profile", profileRoutes);
 app.use("/api/auth/shots", shotRoutes);
 app.use("/api/auth/statuses", statusRoutes);
 app.use("/api/auth/messages", messageRoutes);
-// Error handlers hamesha sab routes ke baad aate hain
+
+// Error handlers — routes ke BAAD
 app.use(notFound);
 app.use(errorHandler);
 
