@@ -1,7 +1,7 @@
 const cors = require('cors');
 
-// CLIENT_URL mein ek ya zyada origins comma se alag karke ho sakte hain
-const allowedOrigins = (process.env.CLIENT_URL || '')
+//CORS_ORIGIN mein ek ya zyada origins comma se alag karke ho sakte hain
+const allowedOrigins = (process.env.CORS_ORIGIN || '')
   .split(',')
   .map((s) => s.trim().replace(/\/$/, ''))
   .filter(Boolean);
